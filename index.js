@@ -10,6 +10,6 @@ app.get("/me", (req, res) => {
   res.send("Hi I am Daniel");
 });
 
-app.listen(5000, () => {
+app.listen(7000, () => {
   console.log("listening");
 });
