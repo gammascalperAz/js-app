@@ -1,0 +1,32 @@
+{
+    "executionRoleArn": "arn:aws:iam::282344936365:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/fargate/service/js-app",
+                    "awslogs-region": "eu-west-1",
+                    "awslogs-stream-prefix": "fargate"
+                }
+            },
+            "portMappings": [
+                {
+                    "hostPort": 7000,
+                    "protocol": "tcp",
+                    "containerPort": 7000
+                }
+            ],
+            "image": "601912882130.dkr.ecr.eu-west-1.amazonaws.com/js-app:425ad54",
+            "name": "js-app"
+        }
+    ],
+    "memory": "512",
+    "family": "js-app-td",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256"
+   
+}
